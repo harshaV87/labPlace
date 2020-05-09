@@ -17,6 +17,10 @@
 		02471E5C2467439400F8A3B0 /* signUpAndLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02471E5B2467439400F8A3B0 /* signUpAndLoginViewController.swift */; };
 		02471E5E246744FF00F8A3B0 /* logInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02471E5D246744FF00F8A3B0 /* logInViewController.swift */; };
 		02471E60246748ED00F8A3B0 /* accountCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02471E5F246748ED00F8A3B0 /* accountCreationViewController.swift */; };
+		02471E6224675A2700F8A3B0 /* postShowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02471E6124675A2700F8A3B0 /* postShowTableViewController.swift */; };
+		02471E64246766BA00F8A3B0 /* postContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02471E63246766BA00F8A3B0 /* postContents.swift */; };
+		02471E6624676D6200F8A3B0 /* imageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02471E6524676D6200F8A3B0 /* imageProcessing.swift */; };
+		02471E68246770E100F8A3B0 /* feedCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02471E67246770E100F8A3B0 /* feedCreationViewController.swift */; };
 		9C0955D9C981154EBB04FB13 /* Pods_labPlace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 116B8D3036119B87C6443076 /* Pods_labPlace.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +37,10 @@
 		02471E5B2467439400F8A3B0 /* signUpAndLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpAndLoginViewController.swift; sourceTree = "<group>"; };
 		02471E5D246744FF00F8A3B0 /* logInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
 		02471E5F246748ED00F8A3B0 /* accountCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = accountCreationViewController.swift; sourceTree = "<group>"; };
+		02471E6124675A2700F8A3B0 /* postShowTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postShowTableViewController.swift; sourceTree = "<group>"; };
+		02471E63246766BA00F8A3B0 /* postContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postContents.swift; sourceTree = "<group>"; };
+		02471E6524676D6200F8A3B0 /* imageProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageProcessing.swift; sourceTree = "<group>"; };
+		02471E67246770E100F8A3B0 /* feedCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = feedCreationViewController.swift; sourceTree = "<group>"; };
 		116B8D3036119B87C6443076 /* Pods_labPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_labPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F251DE2F5002DBD80A955C9 /* Pods-labPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-labPlace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-labPlace/Pods-labPlace.debug.xcconfig"; sourceTree = "<group>"; };
 		7F84CBEF653B689010A6300B /* Pods-labPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-labPlace.release.xcconfig"; path = "Pods/Target Support Files/Pods-labPlace/Pods-labPlace.release.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +91,10 @@
 				02471E4724669B4C00F8A3B0 /* SceneDelegate.swift */,
 				02471E4924669B4C00F8A3B0 /* ViewController.swift */,
 				02471E4B24669B4C00F8A3B0 /* Main.storyboard */,
+				02471E67246770E100F8A3B0 /* feedCreationViewController.swift */,
+				02471E6124675A2700F8A3B0 /* postShowTableViewController.swift */,
+				02471E63246766BA00F8A3B0 /* postContents.swift */,
+				02471E6524676D6200F8A3B0 /* imageProcessing.swift */,
 				02471E5F246748ED00F8A3B0 /* accountCreationViewController.swift */,
 				02471E5D246744FF00F8A3B0 /* logInViewController.swift */,
 				02471E5B2467439400F8A3B0 /* signUpAndLoginViewController.swift */,
@@ -225,10 +237,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				02471E4A24669B4C00F8A3B0 /* ViewController.swift in Sources */,
+				02471E64246766BA00F8A3B0 /* postContents.swift in Sources */,
+				02471E68246770E100F8A3B0 /* feedCreationViewController.swift in Sources */,
 				02471E4624669B4C00F8A3B0 /* AppDelegate.swift in Sources */,
 				02471E5C2467439400F8A3B0 /* signUpAndLoginViewController.swift in Sources */,
 				02471E4824669B4C00F8A3B0 /* SceneDelegate.swift in Sources */,
 				02471E5E246744FF00F8A3B0 /* logInViewController.swift in Sources */,
+				02471E6224675A2700F8A3B0 /* postShowTableViewController.swift in Sources */,
+				02471E6624676D6200F8A3B0 /* imageProcessing.swift in Sources */,
 				02471E60246748ED00F8A3B0 /* accountCreationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
