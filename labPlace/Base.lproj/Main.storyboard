@@ -457,25 +457,26 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkp-i1-3AJ">
-                                            <rect key="frame" x="20" y="79" width="374" height="40"/>
+                                            <rect key="frame" x="20" y="79" width="374" height="70"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="zJf-Km-26y"/>
+                                                <constraint firstAttribute="height" constant="70" id="zJf-Km-26y"/>
                                             </constraints>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <dataDetectorType key="dataDetectorTypes" address="YES"/>
                                         </textView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hka-e6-DGw">
-                                            <rect key="frame" x="20" y="121" width="374" height="230"/>
+                                            <rect key="frame" x="20" y="151" width="374" height="150"/>
                                             <color key="backgroundColor" red="1" green="0.68338895749999995" blue="0.67834199740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="230" id="dzH-sx-udw"/>
+                                                <constraint firstAttribute="height" constant="150" id="dzH-sx-udw"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LvT-fr-qLa">
-                                            <rect key="frame" x="30" y="353" width="0.0" height="25"/>
+                                            <rect key="frame" x="30" y="303" width="0.0" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="tCI-sq-y8g"/>
                                             </constraints>
@@ -495,6 +496,15 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qym-Cc-q7n">
+                                            <rect key="frame" x="389" y="0.0" width="25" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="N2T-dq-tjK"/>
+                                                <constraint firstAttribute="width" constant="25" id="Spl-rz-4VN"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                            <state key="normal" title="..."/>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="xkp-i1-3AJ" firstAttribute="top" secondItem="eaI-vF-pqj" secondAttribute="bottom" constant="4" id="2YP-h4-mba"/>
@@ -512,6 +522,8 @@
                                         <constraint firstAttribute="trailing" secondItem="tXv-4U-jk8" secondAttribute="trailing" constant="100" id="eCb-yf-Z0S"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="xkp-i1-3AJ" secondAttribute="trailing" id="eoE-a3-mCK"/>
                                         <constraint firstItem="JKw-ut-0B8" firstAttribute="top" secondItem="cNH-yU-HFh" secondAttribute="top" constant="5" id="o37-HY-DfJ"/>
+                                        <constraint firstItem="qym-Cc-q7n" firstAttribute="top" secondItem="cNH-yU-HFh" secondAttribute="top" id="rke-1D-JyG"/>
+                                        <constraint firstAttribute="trailing" secondItem="qym-Cc-q7n" secondAttribute="trailing" id="sFJ-dZ-vr5"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -561,7 +573,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKL-oO-mtv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7073" y="-1074"/>
+            <point key="canvasLocation" x="7775" y="-275"/>
         </scene>
         <!--Item-->
         <scene sceneID="ocw-p5-gRW">
@@ -627,7 +639,7 @@
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <dataDetectorType key="dataDetectorTypes" link="YES" lookupSuggestion="YES"/>
+                                        <dataDetectorType key="dataDetectorTypes" link="YES" address="YES" lookupSuggestion="YES"/>
                                     </textView>
                                 </subviews>
                                 <constraints>

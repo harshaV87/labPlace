@@ -136,7 +136,7 @@ class postShowTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 400
+        return 300
         
     }
     
@@ -157,6 +157,158 @@ class postShowTableViewController: UITableViewController {
 
         return cell
     }
+    
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let listHere = postsInN[indexPath.row]
+        
+        
+        //creating an alert controller
+        
+        
+        
+        let alertCont = UIAlertController(title: listHere.postText, message: "Update the text field or delete the listing", preferredStyle: .alert)
+        
+        //Creating an Update Actions
+        
+        
+        let updateAction = UIAlertAction(title: "Update", style: .default) { (_) in
+            
+            
+            let postID = listHere.postID
+            
+            let updatedText = alertCont.textFields?[0].text
+            
+            let date = listHere.Date
+            
+            let author = listHere.author
+            
+            let pathToImage = listHere.pathToImage
+            
+            let userImage = listHere.userProfileImageUrl
+            
+            let postDateAndTime = listHere.postTimeAndDate
+            
+            let userID = listHere.userID
+            
+            
+            
+            let feed = ["userID" : userID,
+                        "pathToImage" : pathToImage,
+                        
+                        "author" : author,
+                        "postID" : postID,
+                        "postText" : updatedText ?? "not updated",
+                        "postTimeAndDate" : postDateAndTime,
+                        "userProfileImageUrl" : userImage,
+                        "Date": date
+                            
+            ] as [String : Any]
+            
+            //Now updating the new values here , as follows, accesing the database
+            
+            
+            Database.database().reference().child("posts").child(postID).updateChildValues(feed) { (err, _) in
+                
+                
+                if err == nil {
+                    
+                    
+                    
+                    let navVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabBarVC") as! UITabBarController
+                    
+                    self.definesPresentationContext = true
+                    
+                    navVc.modalPresentationStyle = .fullScreen
+                    
+                        self.present(navVc, animated: true, completion: nil)
+                    
+                    
+                    
+                    
+                }
+                
+            }
+            
+            
+        }
+        
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .default) { (_) in
+            
+           let postID = listHere.postID
+            
+            //we are deleting the node after retirving
+            
+            
+            
+            
+            Database.database().reference().child("posts").child(postID).removeValue { (err, _) in
+                
+                if err == nil {
+                    
+                    let navVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabBarVC") as! UITabBarController
+                    
+                    self.definesPresentationContext = true
+                    
+                    navVc.modalPresentationStyle = .fullScreen
+                    
+                        self.present(navVc, animated: true, completion: nil)
+                    
+                    
+                }
+                
+            }
+            
+            
+            
+            
+            
+        }
+        
+        let seeDetails = UIAlertAction(title: "See Details", style: .default) { (_) in
+            
+            
+            
+            
+            
+        }
+        
+        
+        let cancelButton = UIAlertAction(title: "Cancel", style: .default) { (_) in
+            
+            
+            self.dismiss(animated: true, completion: nil)
+            
+            
+        }
+        
+        
+        
+        alertCont.addTextField { (textIn) in
+            
+            textIn.text = listHere.postText
+            
+        }
+        
+        
+        
+        alertCont.addAction(updateAction)
+          alertCont.addAction(deleteAction)
+        alertCont.addAction(seeDetails)
+        alertCont.addAction(cancelButton)
+        
+        present(alertCont, animated: true, completion: nil)
+        
+        
+        
+        
+        
+        
+    }
+    
     
     
     
@@ -196,6 +348,7 @@ class postShowTableViewController: UITableViewController {
     }
     
     
+ 
     
     
     @IBAction func addButtonpressed(_ sender: Any) {
