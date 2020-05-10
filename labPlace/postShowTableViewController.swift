@@ -607,7 +607,7 @@ class postShow: UITableViewCell {
         
         postText.text = post.postText
 
-        timeStamp.text = post.postTimeAndDate
+        timeStamp.text = "Posted on \(post.postTimeAndDate)"
         
     
         
