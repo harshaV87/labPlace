@@ -94,6 +94,16 @@ class detailViewController: UIViewController {
                 
                 self.mapViewMark.addAnnotation(annotation)
                 
+                //xooming in
+                
+                let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(labCoordlat, labCoordlon)
+                
+                let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+                
+                let region = MKCoordinateRegion(center: coordinate, span: span)
+                
+                self.mapViewMark.setRegion(region, animated: true)
+                
               
             }
             
