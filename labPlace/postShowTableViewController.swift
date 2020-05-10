@@ -44,11 +44,15 @@ class postShowTableViewController: UITableViewController {
         
         //Navigation bar title
         
-        navigationController?.navigationBar.topItem?.title = "Your Feed"
+        navigationController?.navigationBar.topItem?.title = "List of available labs"
         
-       
+       let textSplit = "Lab Name - Novartis ,  Address @ 22865 Caminito Plumas, Laguna Hills, California, USA, 92653"
     
+        let splitStringArray = textSplit.split(separator: "@", maxSplits: 1).map(String.init)
         
+        
+        print("The first part is \(splitStringArray[0])")
+        print("The second part is \(splitStringArray[1])")
         
     }
     
@@ -136,7 +140,7 @@ class postShowTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 300
+        return 320
         
     }
     
@@ -270,7 +274,16 @@ class postShowTableViewController: UITableViewController {
         
         let seeDetails = UIAlertAction(title: "See Details", style: .default) { (_) in
             
+            let navVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "details") as! detailViewController
             
+//            navVc.modalPresentationStyle = .fullScreen
+          
+            let navigationController = UINavigationController(rootViewController: navVc)
+            
+            
+            
+            
+                self.present(navigationController, animated: true, completion: nil)
             
             
             
@@ -493,8 +506,8 @@ class postShowTableViewController: UITableViewController {
 
 }
 
-//MARK:........................................................CELL ASPECTS...............................................................
-//MARK: CELL ASPECST - START
+
+//MARK: CELL ASPECTS - START
 
 class postShow: UITableViewCell {
     
@@ -593,7 +606,7 @@ class postShow: UITableViewCell {
         }
         
         
-        userName.text = post.author
+        userName.text = "\(post.author) - Post contributor"
         
         postText.text = post.postText
 
