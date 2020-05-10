@@ -46,13 +46,7 @@ class postShowTableViewController: UITableViewController {
         
         navigationController?.navigationBar.topItem?.title = "List of available labs"
         
-       let textSplit = "Lab Name - Novartis ,  Address @ 22865 Caminito Plumas, Laguna Hills, California, USA, 92653"
-    
-        let splitStringArray = textSplit.split(separator: "@", maxSplits: 1).map(String.init)
-        
-        
-        print("The first part is \(splitStringArray[0])")
-        print("The second part is \(splitStringArray[1])")
+       
         
     }
     
@@ -277,6 +271,9 @@ class postShowTableViewController: UITableViewController {
             let navVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "details") as! detailViewController
             
 //            navVc.modalPresentationStyle = .fullScreen
+            
+            
+            navVc.labDetails = listHere
           
             let navigationController = UINavigationController(rootViewController: navVc)
             
