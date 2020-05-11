@@ -45,10 +45,10 @@ class signUpAndLoginViewController: UIViewController {
     
     @IBAction func TCPPressed(_ sender: Any) {
         
-        let navVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gotToTCP")
-               
-               present(navVc, animated: true, completion: nil)
-        
+//        let navVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gotToTCP")
+//
+//               present(navVc, animated: true, completion: nil)
+//
         
     }
     

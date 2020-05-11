@@ -115,7 +115,7 @@ class feedCreationViewController: UIViewController, UITextViewDelegate {
     }
     
     
-    //MARK: TEXTVIEW DELEGATES FOR THE TEXTVIEW PLACEHOLDER - END
+    
     
     
     

@@ -19,6 +19,8 @@ class detailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //splitting the text to show the Lab name and address seperately
 
         let textSplit = labDetails?.postText
     
@@ -30,7 +32,7 @@ class detailViewController: UIViewController {
         
         postedDate.text = labDetails?.postTimeAndDate
         
-    
+    //call to show location
         showAddressOnMap()
         
         
@@ -67,6 +69,8 @@ class detailViewController: UIViewController {
     //LOCATION
     
     func showAddressOnMap() {
+        
+        //call to show location using geocoder
         
         let geoCod = CLGeocoder()
         

@@ -86,15 +86,7 @@ class logInViewController: UIViewController {
     }
     
     
-    @IBAction func forgotPasswordPressed(_ sender: Any) {
-        
-        
-        let navVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gotToReset")
-               
-               present(navVc, animated: true, completion: nil)
-        
-        
-    }
+    
     
     
     

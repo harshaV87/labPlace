@@ -50,73 +50,8 @@ class postShowTableViewController: UITableViewController {
         
     }
     
-    
-    
-    
 
-    
-    
 
-    //Test Pagination
-    
-    var currentDate : Double!
-    
-    var currentRelatedKey: String!
-    
-    
-    
-    //start of a newnew fetch
-    
-    
-    func newFetchN(completion: @escaping (_ posts: [postContentN]) -> ()) {
-        
-     
-        
-      
-
-        
-        
-        oldPostRef.queryLimited(toLast: 5).observeSingleEvent(of: .value) { (snapshot) in
-            
-            
-//            print("the snap previous is as follows \(snapshot)")
-        
-            var temPostsN = [postContentN]()
-            
-            let lastPost = self.postsInN.last
-            
-            for child in snapshot.children {
-                
-                
-                
-                
-                if let childSnapshot = child as? DataSnapshot,
-                let dict = childSnapshot.value as? [String:Any],
-                    let userIDD = dict["userID"] as? String,
-                    let userProfile = postContentN.parse(childSnapshot.key, dict),
-                    childSnapshot.key != lastPost?.keyID {
-                                        
- temPostsN.insert(userProfile, at: 0)
-            
-
-                                        
-                                    }
-                    
-                
-            }
-            
-            return completion(temPostsN)
-            
-        }
-        
-    }
-    
-    
-    //end of a newnewfecth
-    
-    
-    
-    
     
     // MARK: - Table view data source
 
@@ -143,13 +78,9 @@ class postShowTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "postIn", for: indexPath) as! postShow
         
       
-
-        cell.postID = postsInN[indexPath.row].keyID
-        
-        
-    //MARK: UNCOMMENT THIS TO MAKE IT WORK - CELL.SET(post: newSort[indexPath.row])
+    
         cell.set(post: postsInN[indexPath.row])
-       //MARK: UNCOMMENT THIS TO MAKE IT WORK - CELL.SET(post: newSort[indexPath.row])
+      
         
  
 
@@ -233,6 +164,7 @@ class postShowTableViewController: UITableViewController {
             
         }
         
+        //delete action
         
         let deleteAction = UIAlertAction(title: "Delete", style: .default) { (_) in
             
@@ -265,6 +197,8 @@ class postShowTableViewController: UITableViewController {
             
             
         }
+        
+        //Detail controller where we can see the details of the lab in a new VC
         
         let seeDetails = UIAlertAction(title: "See Details", style: .default) { (_) in
             
@@ -389,7 +323,7 @@ class postShowTableViewController: UITableViewController {
     
     
     
-    //MARK:........Start of the pagination, refresh button and more posts button
+    //MARK: Start of the pagination scroll view
     
     //this is where we start the variables to define the first and last posts for pagination
     
@@ -420,11 +354,57 @@ class postShowTableViewController: UITableViewController {
         return queryRef
         
     }
-     //old post ref is for retrieving and loading posts 5 at a time - end
+    
     
      
     
-    
+    //MARK: PAGINATION FUNCTION TO SCROLL VIEW
+        
+        
+        func newFetchN(completion: @escaping (_ posts: [postContentN]) -> ()) {
+            
+         
+            
+          
+
+            
+            
+            oldPostRef.queryLimited(toLast: 5).observeSingleEvent(of: .value) { (snapshot) in
+                
+                
+    //            print("the snap previous is as follows \(snapshot)")
+            
+                var temPostsN = [postContentN]()
+                
+                let lastPost = self.postsInN.last
+                
+                for child in snapshot.children {
+                    
+                    
+                    
+                    
+                    if let childSnapshot = child as? DataSnapshot,
+                    let dict = childSnapshot.value as? [String:Any],
+                        let _ = dict["userID"] as? String,
+                        let userProfile = postContentN.parse(childSnapshot.key, dict),
+                        childSnapshot.key != lastPost?.keyID {
+                                            
+     temPostsN.insert(userProfile, at: 0)
+                
+
+                                            
+                                        }
+                        
+                    
+                }
+                
+                return completion(temPostsN)
+                
+            }
+            
+        }
+        
+        
 
     
     
@@ -456,7 +436,7 @@ class postShowTableViewController: UITableViewController {
       
       }
     
-    //MARK: SCROLL END
+   
     
     //MARK: BATCH FETCH START
     
@@ -467,8 +447,8 @@ class postShowTableViewController: UITableViewController {
         
         newFetchN { (postBatchN) in
             
-//            print("the newfectchN is as follows \(postBatchN)")
-            
+
+            //appending the contents as the function newfetch gets called as we scroll and the list is added to the array until we hit the last post
             
             self.postsInN.append(contentsOf: postBatchN)
             self.tableView.reloadData()
@@ -485,21 +465,7 @@ class postShowTableViewController: UITableViewController {
         
     }
     
-    //MARK: BATCH FETCH END
-    
-        //MARK: ........end of the pagination, refresh button and more posts button
-    
-    
-    
-    
-   //MARK: ...........................................................................................
-    
-    
-    
-    
-    
-    
-    
+
 
 }
 
@@ -528,6 +494,7 @@ class postShow: UITableViewCell {
                postImage.clipsToBounds = true
                postImage.backgroundColor = .red
         
+        //This is to prevent image flickering
         
         postedUserImage.image = nil
         postImage.image = nil
@@ -616,16 +583,6 @@ class postShow: UITableViewCell {
     }
     
     
-    
-    //MARK: IBO ACTIONS
-    
-    
-    
-    var postID: String!
-    
-    
-  
-   
     
 }
 

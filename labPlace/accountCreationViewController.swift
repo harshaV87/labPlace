@@ -219,7 +219,7 @@ class accountCreationViewController: UIViewController, UIImagePickerControllerDe
         
     }
     
-    //MARK: END OF MAKING SURE THAT NONE OF THE FIELDS ARE EMPTY
+    
     
     //MARK: ADDING TAP GESTURE ON THE IMAGE.........................StartImagePickAspects
         
@@ -235,6 +235,7 @@ class accountCreationViewController: UIViewController, UIImagePickerControllerDe
         
     }
     
+    //MARK: Selecting the image source and picker
     
     @objc func selectAnImage() {
            
